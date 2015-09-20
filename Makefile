@@ -6,12 +6,12 @@
 #    By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/29 13:16:03 by mcanal            #+#    #+#              #
-#    Updated: 2015/09/17 02:26:41 by mcanal           ###   ########.fr        #
+#    Updated: 2015/09/18 02:41:50 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = ft_script
-SRC = main.c error.c put_date.c
+SRC = main.c error.c put_date.c parsing.c exec.c
 O_DIR = obj
 C_DIR = src
 VPATH =	src
@@ -65,7 +65,7 @@ lib:
 -include $(DEPS)
 
 $(NAME): $(OBJS) $(LIB)
-	@$(CC) $(CFLAGS) $(I_DIR) $(OBJS) $(LIB) -o $@
+	@$(CC) $(CFLAGS) $(I_DIR) $(OBJS) $(LIB) -o $@ -lncurses
 	@echo "$(BLUE)$(OBJS) $(WHITE)->$(RED) $@ $(BASIC)"
 	@echo "$(WHITE)flags:$(BASIC) $(CFLAGS)"
 	@echo "$(WHITE)compi:$(BASIC) $(CC)"
